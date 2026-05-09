@@ -10,7 +10,7 @@ SUBSCRIPTION_ID = "vote-sub"
 
 subscriber = pubsub_v1.SubscriberClient()
 subscription_path = subscriber.subscription_path(PROJECT_ID, SUBSCRIPTION_ID)
-db = firestore.Client(project=PROJECT_ID)
+db = firestore.Client(project=PROJECT_ID, database="pdcc")
 
 # Health check server for Cloud Run
 class HealthCheck(BaseHTTPRequestHandler):
